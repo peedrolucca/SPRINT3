@@ -27,12 +27,12 @@ switchport mode access
 switchport access vlan 12
 description PC GRUPO2
 exit
-interface fastethernet 0/3
+interface fastethernet 0/2
 switchport mode access
 switchport access vlan 12
 description PC GRUPO2
 exit
-interface fastethernet 0/2
+interface fastethernet 0/23
 switchport mode trunk
 switchport trunk native vlan 99
 switchport trunk allowed vlan 12,99,102
