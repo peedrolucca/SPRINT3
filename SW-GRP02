@@ -2,6 +2,7 @@ enable
 configure terminal
 hostname SW-GRP02
 enable secret SenhadaEnable
+ip default-gateway 192.168.253.1
 line console 0 
 password SenhadaConsole
 login
@@ -22,25 +23,20 @@ vlan 12
 name PCVLAN12
 vlan 102
 name Equipamentos
+interface vlan 102
+ip address 192.168.253.254 255.255.255.0
+no shutdown
 interface fastethernet 0/1
 switchport mode access
 switchport access vlan 12
 description PC GRUPO2
-exit
 interface fastethernet 0/3
 switchport mode access
 switchport access vlan 12
 description PC GRUPO2
-exit
 interface fastethernet 0/23
 switchport mode trunk
 switchport trunk native vlan 99
 switchport trunk allowed vlan 12,99,102
 description GRUPO2
-exit
-interface vlan 102
-ip address 192.168.253.254 255.255.255.0
-no shutdown
-exit
-ip default-gateway 192.168.253.1
 do wr
